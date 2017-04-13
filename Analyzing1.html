@@ -39,25 +39,34 @@
 	<body>
 		<div style="height: 5em;"></div>
 		<div class="col-sm-3" style="text-align: right;">
-			<label  style="font-family: '微软雅黑';text-align:right ;font-size: 1.5em;" >搜索关键词</label>
+			<label style="font-family: '微软雅黑';text-align:right ;font-size: 1.5em;">搜索关键词</label>
 		</div>
 		<div class="col-sm-9">
-		     <p style="margin-top: 1%;">(Input the key words you want to search for)</p>
-	    </div>
-	
+			<p style="margin-top: 1%;">(Input the key words you want to search for)</p>
+		</div>
+
 		<form class="form-horizontal">
 			<div class="form-group">
 				<div class="col-sm-3"></div>
-				<div class="col-sm-6" >
-					<input  class="form-control" id="inputPassword" placeholder="输入关键词">
-				
+				<div class="col-sm-6">
+
+					<script type="text/javascript">
+						function submitBtnClick() {
+							$('#search').submit();
+						}
+					</script>
+					
+					<!--这里是表单代码-->
+					<form id="search" action="result.html" method="post">
+						<input class="form-control" id="inputsearch" type="text" placeholder="输入关键词">
+						<div class="col-sm-3">
+						<button  class="btn btn-info"  value="submitsearch" style="font-family: '微软雅黑';font-size: 1.1em;" onclick="submitBtnClick()">搜索</button>
+						</div>
+					</form>
 				</div>
-				<div class="col-sm-3">				    
-					<button type="button" class="btn btn-info" style="font-family: '微软雅黑';font-size: 1.1em;" onclick="javascript:window.location.href='result.html' ">搜索</button>
-                </div>
 
 			</div>
-			
+
 			<div style="height: 500px;width: 1600px;margin-top: 6%;margin-left: 8%;" id="Scatter"></div>
 		</form>
 
